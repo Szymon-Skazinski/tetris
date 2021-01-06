@@ -33,7 +33,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.epam.prejap.sdp.git.tetris.Tetris</mainClass>
+                            <mainClass>com.epam.prejap.tetris.Tetris</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

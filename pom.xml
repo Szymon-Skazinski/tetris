@@ -40,7 +40,7 @@
                 <executions>
                     <execution>
                         <id>default-jar</id>
-                        <phase>compile</phase>
+                        <phase>process-classes</phase>
                     </execution>
                 </executions>
             </plugin>

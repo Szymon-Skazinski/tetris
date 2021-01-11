@@ -15,7 +15,6 @@ import static org.testng.Assert.fail;
 @Test(groups = "JarFile")
 public class JarFileTest {
 
-    private static final Path jarfilePath = Path.of(".", "target", "tetris.jar");
     private static final String expectedMainClassName = Tetris.class.getCanonicalName();
 
     @Test(dataProvider = "manifestForCheckingJar", dependsOnMethods = "dataProviderTest")
@@ -34,9 +33,12 @@ public class JarFileTest {
 
     @DataProvider
     public static Object[][] manifestForCheckingJar() {
+        String outputPathProperty = System.getProperty("outputPath");
+        Path outputPath = Path.of(outputPathProperty);
+
         Manifest manifest = null;
         try {
-            JarFile jarFile = new JarFile(jarfilePath.toString());
+            JarFile jarFile = new JarFile(outputPath.toString());
             manifest = jarFile.getManifest();
         } catch (IOException e) {
             fail(".jar or MANIFEST.MF file does not exist");
